@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricebook Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <aside class="form-card">
+      <h2>⚙️ Service Cost Calculator</h2>
+
+      <form id="calcForm">
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" required></select>
+        </div>
+
+        <div class="form-group">
+          <label for="level">Level</label>
+          <select id="level" required></select>
+        </div>
+
+        <div class="form-group">
+          <label for="serviceType">Service Type</label>
+          <select id="serviceType">
+            <option value="yearly">Yearly</option>
+            <option value="daily">Daily</option>
+            <option value="hourly">Hourly</option>
+            <option value="shortTermMonthly">Short Term Monthly</option>
+            <option value="longTermMonthly">Long Term Monthly</option>
+
+            <optgroup label="Dispatch Ticket (Incident)">
+              <option value="dispatch_9x5x4">9x5x4 Incident Response</option>
+              <option value="dispatch_24x7x4">24x7x4 Response to Site</option>
+              <option value="dispatch_sbd">SBD Business Day Resolution</option>
+              <option value="dispatch_nbd">NBD Resolution to Site</option>
+              <option value="dispatch_2bd">2BD Resolution to Site</option>
+              <option value="dispatch_3bd">3BD Resolution to Site</option>
+              <option value="dispatch_additional_hour">Additional Hour Rate</option>
+            </optgroup>
+
+            <optgroup label="Dispatch Pricing (IMAC)">
+              <option value="dispatch_imac_2bd">2BD Resolution to Site</option>
+              <option value="dispatch_imac_3bd">3BD Resolution to Site</option>
+              <option value="dispatch_imac_4bd">4BD Resolution to Site</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="backfill">Backfill Option</label>
+          <select id="backfill">
+            <option value="with">With Backfill</option>
+            <option value="without">Without Backfill</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Duration</label>
+          <input type="number" id="duration" min="1" required>
+        </div>
+
+        <button type="submit" class="btn">Calculate</button>
+      </form>
+    </aside>
+
+    <main class="result-panel">
+      <h2>📊 Calculation Result</h2>
+      <div class="result-box">
+        <p id="result">Please enter details to calculate.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
